@@ -1,4 +1,4 @@
-// script.js – Interactivity, animations, and cart handling for GIMA MODS
+// script.js – Interactivity, animations, and cart handling for RV Holdings
 
 document.addEventListener('DOMContentLoaded', () => {
     
@@ -478,7 +478,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Checkout event
     checkoutBtn.addEventListener('click', () => {
-        alert('Stuthiy! Your mod parts order has been simulated. GIMA MODS will send details to your email/phone.');
+        alert('Stuthiy! Your mod parts order has been simulated. RV Holdings will send details to your email/phone.');
         cart = {};
         saveCart();
         toggleDrawer(false);
@@ -561,7 +561,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const vehicle = document.getElementById('vehicle').value;
             const message = document.getElementById('message').value;
 
-            alert(`Stuthiy ${name}!\n\nWe received your request for the ${vehicle}.\nOur customization experts will call you at ${phone} within 24 hours to discuss options and send a quote.\n\nDriving with Distinction, GIMA MODS!`);
+            alert(`Stuthiy ${name}!\n\nWe received your request for the ${vehicle}.\nOur customization experts will call you at ${phone} within 24 hours to discuss options and send a quote.\n\nDriving with Distinction, RV Holdings!`);
             quoteForm.reset();
         });
     }
