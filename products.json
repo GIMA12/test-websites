@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Titanium Performance Exhaust",
+    "price": 799.99,
+    "category": "Exhaust",
+    "description": "Ultra-lightweight aerospace-grade titanium cat-back exhaust system. Significantly increases horsepower, delivers an aggressive, deep exhaust note, and features precision burned-blue tips.",
+    "image": "./images/exhaust.png",
+    "specs": ["Material: Grade 5 Titanium", "Weight reduction: -12.4 kg", "Power Gain: +18 HP", "Tip Diameter: 4.0 inches"]
+  },
+  {
+    "id": 2,
+    "name": "Stage 3 Twin Turbocharger Kit",
+    "price": 3499.00,
+    "category": "Performance",
+    "description": "The ultimate forced induction upgrade. Complete heavy-duty twin turbocharger system engineered for massive boost. Includes high-efficiency intercooler, aluminum charge pipes, wastegates, and all mounting hardware.",
+    "image": "./images/turbo.png",
+    "specs": ["Compressor Wheel: Billet Aluminum", "Bearing Type: Dual Ball Bearing", "Max Boost Capacity: 35 PSI", "Power Potential: Up to 900 HP"]
+  },
+  {
+    "id": 3,
+    "name": "Gloss Carbon Fiber Hood",
+    "price": 1199.50,
+    "category": "Exterior",
+    "description": "High-gloss double-sided carbon fiber hood. Reduces front-end weight for better weight distribution and handling, while featuring functional aggressive heat extraction vents to keep engine bay temperatures cool.",
+    "image": "./images/hood.png",
+    "specs": ["Material: 2x2 Twill Carbon Fiber", "Finish: UV-Resistant High Gloss Clear Coat", "Weight: 6.8 kg (OEM is 18.2 kg)", "Fitment: Direct OEM Replacement"]
+  },
+  {
+    "id": 4,
+    "name": "V2 Custom LED Headlights",
+    "price": 549.00,
+    "category": "Lighting",
+    "description": "High-intensity LED projector headlights featuring an animated start-up welcome sequence. Bright white daytime running lights (DRL) combined with intense sequential amber turn signals for unmatched presence.",
+    "image": "./images/headlights.png",
+    "specs": ["Light Source: Custom OSRAM LEDs", "Color Temp: 6000K (Daylight White)", "Signaling: Sequential LED Amber", "Certification: DOT/SAE Compliant"]
+  },
+  {
+    "id": 5,
+    "name": "Adjustable Racing Coilovers",
+    "price": 899.00,
+    "category": "Suspension",
+    "description": "32-way damping adjustable performance coilovers. Features monotube shocks, polyurethane bushings, and high-tensile cold-wound steel springs. Allows full height adjustment without affecting suspension travel.",
+    "image": "./images/coilovers.png",
+    "specs": ["Damping Adjustment: 32 Levels", "Spring Rate Front: 8 kg/mm", "Spring Rate Rear: 6 kg/mm", "Material: T6-6061 Hard Anodized Aluminum"]
+  },
+  {
+    "id": 6,
+    "name": "Alcantara Sports Steering Wheel",
+    "price": 429.00,
+    "category": "Interior",
+    "description": "Hand-stitched premium Alcantara sports steering wheel. Features ergonomic molded thumb grips, a racing flat-bottom design, red center line marker, and high-gloss real carbon fiber trim inserts.",
+    "image": "./images/steering_wheel.png",
+    "specs": ["Grip Material: Genuine Italian Alcantara", "Trim Material: 3K Plain Carbon Fiber", "Design: Flat-Bottom Racing D-Shape", "Stitching: Cross-Stitch Red Thread"]
+  }
+]

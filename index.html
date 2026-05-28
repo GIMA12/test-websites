@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GIMA MODS – Premium Vehicle Customization & Parts Shop</title>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Local relative style sheets -->
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="nav-logo">
+                <span>🚗 GIMA MODS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#showcase">Showcase</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="cart-li">
+                    <button class="cart-icon-btn" id="cart-btn" aria-label="Open Cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <img src="./images/hero_banner.png" alt="Modified sports car under neon lighting" class="hero-img" />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-badge">Est. 2026</span>
+            <h1>Unleash Pure <span>Performance</span></h1>
+            <p>We modify cars and supply premium modification parts to elevate your driving experience. Engineered for tracks, styled for streets.</p>
+            <a href="#shop" class="btn-primary">
+                Explore Parts <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title">Our <span>Services</span></h2>
+            <p class="section-subtitle">From performance tuning to visual styling, we specialize in high-end vehicle modifications designed to fit your vision.</p>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <h3>Performance Tuning</h3>
+                    <p>Unlock your engine's true capacity with ECU remaps, high-flow turbocharger upgrades, and precision exhaust optimizations.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3>Carbon & Styling</h3>
+                    <p>Upgrade to high-grade carbon fiber body kits, lightweight hoods, aggressive spoilers, and professional custom wrapping.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-circle-notch"></i>
+                    </div>
+                    <h3>Wheels & Suspension</h3>
+                    <p>Perfect your stance and cornering with adjustable racing coilovers, air-ride systems, and premium lightweight alloy rims.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card animate-on-scroll">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3>Custom Lighting</h3>
+                    <p>Stand out in the dark with customized LED projector headlights, sequential taillights, and glowing neon underglow tracks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before / After Slider Section -->
+    <section id="showcase" class="section" style="background-color: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="section-title">Transformation <span>Showcase</span></h2>
+            <p class="section-subtitle">Compare a stock Toyota Land Cruiser with our GIMA custom-built off-road beast. Drag the slider to reveal the transformation.</p>
+            
+            <div class="slider-container animate-on-scroll" id="before-after-slider">
+                <!-- Before (Stock) -->
+                <div class="slider-img img-before">
+                    <img src="./images/lc_stock.png" alt="Stock Toyota Land Cruiser" />
+                    <span class="slider-label label-before">Stock Land Cruiser</span>
+                </div>
+                <!-- After (Modified) -->
+                <div class="slider-img img-after" id="after-img-container">
+                    <img src="./images/lc_modified.png" alt="GIMA Modified Toyota Land Cruiser" id="after-img-raw" />
+                    <span class="slider-label label-after">GIMA Custom Build</span>
+                </div>
+                <!-- Handle -->
+                <div class="slider-handle" id="slider-handle">
+                    <div class="slider-button">
+                        <i class="fa-solid fa-arrows-left-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Parts Section -->
+    <section id="shop" class="section">
+        <div class="container">
+            <h2 class="section-title">Performance <span>Parts Shop</span></h2>
+            <p class="section-subtitle">Browse and order premium quality performance parts. We offer island-wide delivery and direct workshop installation.</p>
+            
+            <div class="shop-controls animate-on-scroll">
+                <!-- Category Tags -->
+                <div class="filter-tags" id="filter-tags">
+                    <button class="filter-btn active" data-category="all">All Parts</button>
+                    <button class="filter-btn" data-category="Exhaust">Exhaust</button>
+                    <button class="filter-btn" data-category="Performance">Performance</button>
+                    <button class="filter-btn" data-category="Exterior">Exterior</button>
+                    <button class="filter-btn" data-category="Lighting">Lighting</button>
+                    <button class="filter-btn" data-category="Suspension">Suspension</button>
+                    <button class="filter-btn" data-category="Interior">Interior</button>
+                </div>
+                
+                <!-- Search bar -->
+                <div class="search-bar-container">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="search-input" class="search-input" placeholder="Search modification parts..." />
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid animate-on-scroll" id="product-grid">
+                <!-- Injected dynamically by script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Quote Request Section -->
+    <section id="contact" class="section" style="background-color: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="section-title">Get A <span>Quote</span></h2>
+            <p class="section-subtitle">Want to modify your ride or install bought parts? Fill out the form below and our specialists will contact you.</p>
+            
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <form class="contact-form animate-on-scroll" id="quote-form" onsubmit="event.preventDefault(); alert('Stuthiy! Request submitted. We will contact you soon.'); this.reset();">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Enter your contact number" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle">Vehicle Model</label>
+                        <input type="text" id="vehicle" class="form-control" placeholder="e.g. Honda Civic Hatchback / Nissan GTR" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Modifications Required / Parts to Install</label>
+                        <textarea id="message" class="form-control" placeholder="Describe the modification work you need..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        Request Quote <i class="fa-solid fa-paper-plane" style="margin-left: 0.5rem;"></i>
+                    </button>
+                </form>
+
+                <!-- Contact Details -->
+                <div class="contact-info animate-on-scroll">
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <div class="info-content">
+                            <h4>Workshop Location</h4>
+                            <p>GIMA Mod Shop Ltd,<br>145 Galle Road, Colombo 03,<br>Sri Lanka</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                        <div class="info-content">
+                            <h4>Call Us Directly</h4>
+                            <p>+94 77 123 4567<br>+94 11 987 6543</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                        <div class="info-content">
+                            <h4>Email Enquiries</h4>
+                            <p>tuning@gimamods.lk<br>parts@gimamods.lk</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-business-time"></i></div>
+                        <div class="info-content">
+                            <h4>Working Hours</h4>
+                            <p>Monday - Saturday: 9:00 AM - 7:00 PM<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide-Out Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header">
+            <h2><i class="fa-solid fa-briefcase" style="color: var(--accent-cyan); margin-right: 0.5rem;"></i> Your Cart</h2>
+            <button class="close-drawer" id="close-drawer" aria-label="Close Cart">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="cart-items-wrapper" id="cart-items">
+            <!-- Dynamically populated -->
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-total-row">
+                <span>Total Amount:</span>
+                <span class="total-price" id="cart-total">$0.00</span>
+            </div>
+            <button class="btn-checkout" id="checkout-btn">
+                Place Order <i class="fa-solid fa-cash-register" style="margin-left: 0.5rem;"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Product Quick View Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal" aria-label="Close Modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-body" id="modal-body">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3><span>🚗 GIMA</span> MODS</h3>
+                    <p>Colombo's premium destination for performance tuning, exterior carbon styling, and track-ready suspension modification. Drive with distinction.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#showcase">Gallery Showcase</a></li>
+                        <li><a href="#shop">Parts Shop</a></li>
+                        <li><a href="#contact">Contact & Quotes</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to receive tuning tips, mod showcases, and exclusive parts discounts.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
+                        <input type="email" placeholder="Your email address" required />
+                        <button type="submit">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 GIMA MODS Co. All rights reserved. Made with ❤️ in Sri Lanka.</p>
+                <p>Designed with Advanced Aesthetics & Animations.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Local relative scripts -->
+    <script src="./script.js" defer></script>
+</body>
+</html>
