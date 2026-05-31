@@ -3,26 +3,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --bg-primary: #08090a;
-    --bg-secondary: #111317;
-    --bg-card: rgba(25, 28, 33, 0.6);
-    --border-color: rgba(255, 255, 255, 0.07);
+    --bg-primary: #050607;
+    --bg-secondary: #0c0e12;
+    --bg-card: rgba(18, 20, 24, 0.65);
+    --border-color: rgba(255, 255, 255, 0.06);
     --text-primary: #ffffff;
-    --text-secondary: #a3a8b4;
+    --text-secondary: #9aa0a6;
     
-    /* Neon accents */
-    --accent-cyan: #00f0ff;
-    --accent-cyan-glow: rgba(0, 240, 255, 0.3);
-    --accent-red: #ff0055;
-    --accent-red-glow: rgba(255, 0, 85, 0.3);
-    --accent-green: #00ffaa;
+    /* Neon & Racing accents */
+    --accent-cyan: #ffc400; /* Gold/yellow racing accents */
+    --accent-cyan-glow: rgba(255, 196, 0, 0.25);
+    --accent-red: #ff5100; /* High-octane orange */
+    --accent-red-glow: rgba(255, 81, 0, 0.25);
+    --accent-green: #aaff00; /* Track lime green */
     
     /* Font stacks */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
     
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    --glass-backdrop: blur(12px) saturate(180%);
+    --glass-backdrop: blur(16px) saturate(180%);
 }
 
 /*--- Global reset ---*/
@@ -47,16 +47,27 @@ body {
     position: relative;
 }
 
-/* Background Grid Overlay */
+/* Background Grid Overlay & Ambient Glows */
 body::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-    background-size: 40px 40px;
+        linear-gradient(rgba(255, 255, 255, 0.008) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.008) 1px, transparent 1px);
+    background-size: 60px 60px;
     background-position: center;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(circle at 10% 25%, rgba(255, 196, 0, 0.035) 0%, transparent 40%),
+        radial-gradient(circle at 90% 65%, rgba(255, 81, 0, 0.02) 0%, transparent 35%);
     pointer-events: none;
     z-index: 0;
 }
@@ -240,8 +251,7 @@ h1, h2, h3, h4, .logo {
     object-fit: cover;
     object-position: center;
     z-index: -2;
-    transform: scale(1.05);
-    animation: zoomOut 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: kenBurns 20s ease-in-out infinite;
 }
 .hero-overlay {
     position: absolute;
@@ -331,8 +341,8 @@ h1, h2, h3, h4, .logo {
 .btn-primary:hover {
     background: #fff;
     color: var(--bg-primary);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
-    transform: translateY(-2px);
+    box-shadow: 0 0 25px var(--accent-cyan-glow), 0 0 40px rgba(255, 196, 0, 0.4);
+    transform: translateY(-3px) scale(1.03);
 }
 .btn-primary:active {
     transform: translateY(0);
@@ -372,9 +382,10 @@ h1, h2, h3, h4, .logo {
     animation: scrollMouse 1.5s infinite;
 }
 
-@keyframes zoomOut {
-    from { transform: scale(1.15); }
-    to { transform: scale(1.05); }
+@keyframes kenBurns {
+    0% { transform: scale(1.02) translate(0, 0); }
+    50% { transform: scale(1.08) translate(-1%, -0.5%); }
+    100% { transform: scale(1.02) translate(0, 0); }
 }
 @keyframes scrollMouse {
     0% { opacity: 1; top: 6px; }
@@ -382,8 +393,8 @@ h1, h2, h3, h4, .logo {
     100% { opacity: 0; top: 18px; }
 }
 @keyframes pulseGlow {
-    0%, 100% { box-shadow: 0 0 15px rgba(255, 0, 85, 0.2); }
-    50% { box-shadow: 0 0 25px rgba(255, 0, 85, 0.5); }
+    0%, 100% { box-shadow: 0 0 15px var(--accent-red-glow); }
+    50% { box-shadow: 0 0 25px rgba(255, 81, 0, 0.5); }
 }
 
 /*--- Services Section ---*/
@@ -391,6 +402,7 @@ h1, h2, h3, h4, .logo {
     padding: 6rem 0;
     border-bottom: 1px solid var(--border-color);
     position: relative;
+    overflow: hidden;
 }
 .section-title {
     font-size: clamp(2rem, 4vw, 2.8rem);
@@ -452,6 +464,12 @@ h1, h2, h3, h4, .logo {
     margin-bottom: 1.5rem;
     display: inline-block;
     color: var(--accent-cyan);
+    transition: var(--transition-smooth);
+}
+.service-card:hover .service-icon {
+    transform: scale(1.12) translateY(-2px);
+    color: #fff;
+    filter: drop-shadow(0 0 8px var(--accent-cyan-glow));
 }
 .service-card h3 {
     font-size: 1.3rem;
@@ -655,8 +673,8 @@ h1, h2, h3, h4, .logo {
 }
 .card:hover {
     transform: translateY(-6px);
-    border-color: rgba(0, 240, 255, 0.25);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 196, 0, 0.1);
 }
 .card-img-wrapper {
     position: relative;
@@ -747,11 +765,20 @@ h1, h2, h3, h4, .logo {
 }
 .add-btn:hover {
     background: #fff;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+.add-btn:active {
+    transform: scale(0.95);
 }
 .add-btn.added {
     background: var(--accent-green);
     color: var(--bg-primary);
+}
+.add-btn.added:hover {
+    background: #fff;
+    color: var(--bg-primary);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
 
 /*--- Cart slide drawer ---*/
